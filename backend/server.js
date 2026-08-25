@@ -32,20 +32,25 @@ connectDB().then(async () => {
 });
 
 // Middleware
-const allowedOrigins = [
-  'http://localhost:3000',
-  'https://agentic-cart-eight.vercel.app/', // replace with your actual Vercel URL
-];
+// const allowedOrigins = [
+//   'http://localhost:3000',
+//   'https://agentic-cart-eight.vercel.app/', // replace with your actual Vercel URL
+// ];
+
+// app.use(cors({
+//   origin: function (origin, callback) {
+//     if (!origin || allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+// }));
 
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: 'https://agentic-cart-eight.vercel.app/', // allows any *.vercel.app subdomain, tighten before final submission
 }));
+
 app.use(bodyParser.json({ limit: '2mb' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
