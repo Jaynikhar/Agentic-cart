@@ -187,6 +187,3 @@ The agent has three tools available: `search_products`, `get_product_details`, a
 
 ---
 
-## 📄 License
-
-Built for the Razorpay Buildathon — Track 1: AI Growth & Agentic Commerce.
