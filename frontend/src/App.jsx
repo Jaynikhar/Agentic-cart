@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ChatWindow from './components/chatWindow';
 import { sendChatMessage, createRazorpayOrder, verifyRazorpayPayment } from './api';
 
@@ -54,14 +54,14 @@ function App() {
     setInput('');
   };
 
-  const buildHistoryPayload = useCallback(
-    (msgs) =>
-      msgs
-        .filter((m) => m.role === 'user' || m.role === 'assistant')
-        .filter((m) => typeof m.content === 'string' && m.content.trim().length > 0)
-        .map((m) => ({ role: m.role, content: m.content })),
-    []
-  );
+  // const buildHistoryPayload = useCallback(
+  //   (msgs) =>
+  //     msgs
+  //       .filter((m) => m.role === 'user' || m.role === 'assistant')
+  //       .filter((m) => typeof m.content === 'string' && m.content.trim().length > 0)
+  //       .map((m) => ({ role: m.role, content: m.content })),
+  //   []
+  // );
 
 
 
