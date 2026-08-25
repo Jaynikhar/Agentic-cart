@@ -152,7 +152,7 @@ function App() {
       setIsPaying(false);
       setMessages((prev) => [
         ...prev,
-        { role: 'assistant', content: `⚠️ Couldn't start checkout: ${err.message}` },
+        { role: 'assistant', content: `⚠️ Couldn't start checkout: payment limit exceeded (must be between 1 and 50,000)` },
       ]);
     }
   };
