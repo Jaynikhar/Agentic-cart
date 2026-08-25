@@ -269,6 +269,8 @@ const ChatWindow = ({
       <div className="px-4 py-4 bg-white/70 border-t border-gray-100 backdrop-blur-md">
         <div className="flex items-end gap-2">
           <textarea
+            id="chat-input"
+            name="chat-input"
             rows={1}
             value={input}
             onChange={(e) => setInput(e.target.value)}
