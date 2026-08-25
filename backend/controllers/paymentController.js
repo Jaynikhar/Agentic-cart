@@ -11,6 +11,13 @@ const createRazorpayOrder = async (req, res) => {
     const { internalOrderId, amount, currency = 'INR', receipt } = req.body;
 
     let payableAmount = amount;
+    const MAX_TEST_AMOUNT = 50000; // ₹5,000 — adjust based on your account's actual limit
+
+    if (payableAmount > MAX_TEST_AMOUNT) {
+      return res.status(400).json({
+        error: `This test Razorpay account has a transaction limit of ₹${MAX_TEST_AMOUNT}. Please choose a lower-priced item for this demo.`,
+      });
+    }
     let order = null;
 
     if (internalOrderId) {
