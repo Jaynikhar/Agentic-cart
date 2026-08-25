@@ -168,10 +168,14 @@ function App() {
     setIsTyping(true);
 
     try {
+      // const data = await sendChatMessage({
+      //   message: text,
+      //   sessionId: sessionIdRef.current,
+      //   history: buildHistoryPayload(messages),
+      // });
       const data = await sendChatMessage({
         message: text,
         sessionId: sessionIdRef.current,
-        history: buildHistoryPayload(messages),
       });
 
       const assistantMessage = { role: 'assistant', content: data.reply };
