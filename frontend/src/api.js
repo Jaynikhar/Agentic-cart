@@ -1,6 +1,10 @@
 import axios from 'axios';
 
+<<<<<<< HEAD
 const API_BASE_URL = process.env.REACT_APP_API_URL;
+=======
+const API_BASE_URL = process.env.REACT_APP_API_URL ;
+>>>>>>> 714b0827c91667584f80a11eda190e9ab511ced3
 
 const api = axios.create({
   baseURL: API_BASE_URL,
