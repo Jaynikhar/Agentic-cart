@@ -212,7 +212,15 @@ const handleChat = async (req, res) => {
     const messages = getSession(sessionId);
     messages.push({ role: 'user', content: message });
 
+
     let finalOrderPayload = null;
+    const MAX_HISTORY_MESSAGES = 12;
+    if (messages.length > MAX_HISTORY_MESSAGES + 1) {
+      const systemMsg = messages[0];
+      const recent = messages.slice(-MAX_HISTORY_MESSAGES);
+      messages.splice(0, messages.length, systemMsg, ...recent);
+    }
+    
     const MAX_TURNS = 5;
 
     for (let turn = 0; turn < MAX_TURNS; turn++) {
