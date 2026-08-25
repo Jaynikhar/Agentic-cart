@@ -152,7 +152,7 @@ function App() {
       setIsPaying(false);
       setMessages((prev) => [
         ...prev,
-        { role: 'assistant', content: `⚠️ Couldn't start checkout: payment limit exceeded (must be between 1 and 50,000)` },
+        { role: 'assistant', content: `⚠️ Couldn't start checkout: This test Razorpay account has a transaction limit of ₹1,000,000,000. Please choose a lower-priced item for this demo.` },
       ]);
     }
   };
